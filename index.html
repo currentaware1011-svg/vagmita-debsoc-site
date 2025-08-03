@@ -2,37 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vagmita DebSoc</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     body {
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #f4e7b7;
+    }
+
+    .logo-bar {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      right: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .logo {
+      height: 60px;
+      opacity: 0.9;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 60px 80px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+      max-width: 600px;
+    }
+
+    .container h1, .container h2, .container h3 {
+      color: #f4e7b7;
+      margin: 20px 0;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
+
+    .container h1 {
+      font-size: 42px;
+    }
+
+    .container h2 {
+      font-size: 26px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    .container h3 {
+      font-size: 20px;
+      font-style: italic;
+      color: #e0c97d;
+    }
+
+    .social-container {
+      margin-top: 40px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 20px;
+      color: #f4e7b7;
+      text-decoration: none;
+      margin: 20px 0;
+      position: relative;
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .social-link i {
+      font-size: 26px;
+      margin-right: 12px;
+    }
+
+    .social-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: #e0c97d;
+      transform: translateY(-2px);
+    }
+
+    .tooltip {
+      visibility: hidden;
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 13px;
+      font-family: 'Open Sans', sans-serif;
+      white-space: nowrap;
+    }
+
+    .social-link:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        height: 40px;
+      }
+
+      .container {
+        padding: 40px 30px;
+      }
+
+      .container h1 {
+        font-size: 30px;
+      }
     }
   </style>
 </head>
-<body class="flex items-center justify-center min-h-screen text-gray-800">
+<body>
+  <!-- Logos Bar -->
+  <div class="logo-bar">
+    <img src="WhatsApp Image 2025-08-04 at 00.21.12.jpeg" alt="Keshav Mahavidyalaya Logo" class="logo college-logo" style="width: 130px; height: auto;" />
 
-  <div class="bg-white shadow-2xl rounded-3xl p-10 max-w-xl w-full text-center border-4 border-pink-300">
-    <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 mb-6">
-      Welcome to Vagmita DebSoc
-    </h1>
+    <img src="WhatsApp Image 2025-08-04 at 00.21.11.jpeg" alt="Vagmita Logo" style="width: 130px; height: auto; border-radius: 12px; margin-bottom: 20px;" />
 
-    <p class="text-lg mb-2 font-medium text-gray-700">Where voices matter and arguments shape change.</p>
-    <p class="text-lg mb-6 font-medium text-gray-700">Join the movement. Speak your truth.</p>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://www.instagram.com/vagmitadebsoc?igsh=MWJncGN5d3BpaTRmNQ==" target="_blank"
-         class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300">
-        🌸 Instagram
-      </a>
 
-      <a href="https://chat.whatsapp.com/CN6o1Qt9mLi0Xl4iHWLq6W?mode=ac_t" target="_blank"
-         class="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300">
-        💬 WhatsApp
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Speak. Think. Conquer.</h1>
+    <h2>Vagmita DebSoc || Orientation 2025</h2>
+    <h3>Get ready to take the mic.</h3>
+
+
+    <div class="social-container">
+      <!-- Instagram -->
+      <a class="social-link" href="https://www.instagram.com/vagmitadebsoc" target="_blank">
+        <i class="fab fa-instagram"></i>Instagram
+        <div class="tooltip">Follow us on Instagram</div>
+      </a><br/>
+
+      <!-- WhatsApp -->
+      <a class="social-link" href="https://chat.whatsapp.com/CN6o1Qt9mLi0Xl4iHWLq6W?mode=ac_t" target="_blank">
+        <i class="fab fa-whatsapp"></i>WhatsApp Group
+        <div class="tooltip">Join the WhatsApp Group</div>
       </a>
     </div>
   </div>
-
 </body>
 </html>
